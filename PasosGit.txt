@@ -1,0 +1,5 @@
+
+1, git add .    (agrego todo los cambios)
+2, git commit -m     (agrego un comentario de l version)
+3, git push -u origin     (le agrego el comit a la pagina de github)
+
