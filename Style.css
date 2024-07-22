@@ -54,22 +54,44 @@ a#desvios{
 }
 img{
     display: flex;
-    flex-direction: row;
     align-items: center;
+    width: 450px;
+    height: 350px;
 }
 .cuerpo{
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    height: 350px;
+    height: 0 auto;
 }
 .promos{
     border: solid;
     border-color: rgb(127, 64, 185);
     width: 200px;
     height: 300px;
+}
+.boxCompra{
+    display: flex;
+    align-items:end;
+    text-align:justify;
+    border: solid;
+    border-color: rgb(127, 64, 185);
+    width: 150px;
+    height: 100px;
+}
+button{
+    display: flex; 
+    align-items:flex-end;
+    width: 70px;
+    height: 20px;
+}
+
+input{
+    width: 30px;
+    height: 15px;
 }
 
 .piedepagina{
@@ -85,4 +107,26 @@ img{
 }
 span{
     font-weight: bold;
+}
+
+
+.lista {
+    flex-wrap:wrap;
+    display: flex;
+    align-items:flex-end;
+    text-align:unset;
+    list-style-type: none; //* Quitar el estilo de lista por defecto */
+}
+
+.lista li {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: space-around;
+    text-align:justify;
+    border: solid;
+    border-color: rgb(127, 64, 185);
+    width: 180px;
+    height: 100px;
+    margin: 5px;
 }
