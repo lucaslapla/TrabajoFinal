@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en"> <!--trabajo Final -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css" >
+    <title>Final Programacion</title>
+</head>
+<body>
+    <div class="encabezado"> <!--Encabezado con titulo y links principales -->
+        <div class="titulo">  
+            <h1 class="marca"> Mini Super Borealis </h1>      
+        </div>
+        <div class="enlaces">  
+            <a class="desvios" href="./Index.html"> Home  </a> 
+            <a class="desvios" href="./Catalogo.html"> Catalogo  </a>
+            <a class="desvios" href="./Sucursales.html"> Sucursales  </a>
+            <a class="desvios" href="./Contactos.html"> Contactos  </a>
+        </div>
+    </div>
+    
+    <div>
+        <h2 id="oferta"> Nuestros contactos </h2>
+        <Div class="subEncabezado"><!--Sub Encabezado con Ofertas Bancarias -->
+            <Div class="miniBox">  Whatsapp 2284534444  </Div>
+            <Div class="miniBox"> facebook:MiniSuperBorealis  </Div>
+            <Div class="miniBox"> Instagram:@MiniSuperBorealis </Div>
+            <Div class="miniBox"> MiniSuperBorealis@gmail.com </Div>
+        </Div> 
+        <h2> Por favor complete los siguientes datos</h2>
+        <form class="contactoCliente">          
+            <label for="nombre">Nombre: </label>
+            <input type="text" class="datos" id="nombre" placeholder="Nombres"> 
+            <label for="apellido"> Apellido: </label>
+            <input type="text" class="datos" id="apellido" placeholder="Apellido">
+            <label for="celular"> Celular </label>
+            <input type="text" class="datos" id="celular" placeholder="Celular">
+            <label for="correo">Correo Electronico</label>
+            <input type="text" class="datos" id="correo" placeholder="Correo">
+            <label for="comentario"> Ingrese un comentario si lo Desea </label>
+            <textarea type="text" class="datosComentario" id="comentario" placeholder="Deje un comentario"> </textarea>
+        </form>
+        <button id="enviar" class="button"> Enviar </button>
+    </Div>
+    
+    <div class="piedepagina"><!--Pie de Pagina, con desvios y contacto en redes -->
+        <div class="comerciales">    
+            <p> Seguinos en nuestras redes <span href="" > facebook </span> <span href="" > Instagram </span>  </p>
+        </div>
+        <div class="enlaces">
+            <a class="desvios" href="./Index.html"> Home  </a> 
+            <a class="desvios" href="./Catalogo.html"> Catalogo  </a>
+            <a class="desvios" href="./Sucursales.html"> Sucursales  </a>
+            <a class="desvios" href="./Contactos.html"> Contactos  </a>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js" integrity="sha512-Qlv6VSKh1gDKGoJbnyA5RMXYcvnpIqhO++MhIM2fStMcGT9i2T//tSwYFlcyoRRDcDZ+TYHpH8azBBCyhpSeqw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="./Contacto.js"></script>
+</body>
+</html>

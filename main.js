@@ -29,6 +29,7 @@ crearLista(productos,precios,stock);
 
 let comprar=document.getElementById("comprar");
 let button=document.createElement("button");
+button.setAttribute("class","button");
 button.textContent = "Comprar";
 comprar.appendChild(button);
 comprar.addEventListener('click', comprarProductos);
