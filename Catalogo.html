@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Style.css" >
-    <title>Final Programacion</title>
+    <title>Catalogo Compra</title>
 </head>
 <body>
     <div class="encabezado"> <!--Encabezado con titulo y links principales -->
@@ -22,7 +22,7 @@
     <div>
         <Div class="subEncabezado"><!--Sub Encabezado con Ofertas Bancarias -->
             <Div class="miniBox">  Contado 20% Desc  </Div>
-            <Div class="miniBox">  Devito 15% Desc  </Div>
+            <Div class="miniBox">  Debito 15% Desc  </Div>
             <Div class="miniBox">  Credito 1 pago S/Interes  </Div>
             <Div class="miniBox">  Credito 12 ctas 30% recardo </Div>
         </Div> 
@@ -31,16 +31,18 @@
         <Div class="cuerpo">     <!--Estructura principal,, lista de productos y boton de compra -->                            
             <ul  id="lista" class="lista" >
             </ul>         
-            
-            <div id="comprar" class="button">       
-            </div>
+              
             <div>
-                <li>1 efectivo</li>
-                <li>2 devito </li>
-                <li>3 credito 1 Pago</li>
-                <li>4 credito 12 Pagos</li>
+                <li>1---Efectivo------------20% Descuento</li>
+                <li>2---Debito--------------20% Descuento</li>
+                <li>3---Credito 1 Pago-----Sin Recargo  </li>
+                <li>4---Credito 12 Pagos---40% Recargo  </li>
             </div>
-            <input type="number"> 
+            
+            <input type="number" id="formaPago" min="1" max="4" value="1"> 
+            
+            <div id="comprar" class="button">    
+            </div>
         </Div>  
     </Div>
     

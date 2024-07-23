@@ -20,4 +20,5 @@ function grabarDatos (){
     console.log(`Nombre: ${arrDatosCliente[0]}, Apellido: ${arrDatosCliente[1]}, Celular: ${arrDatosCliente[2]}, Correo: ${arrDatosCliente[3]}, Comentario: ${arrDatosCliente[4]}`);
     let blob = new Blob ([arrDatosCliente], {type: "text/plain;charset=utf-8"});
     saveAs(blob,"Clientes.txt"); //libretia FileSaver.js//
+    alert(" Sus datos se Cargaron correctamente, Mucas Gracias ");
 }

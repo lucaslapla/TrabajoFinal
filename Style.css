@@ -67,7 +67,24 @@ img.imgPlano{ /*-- utilizo un tamano espesifico para el plano--*/
     width: 550px;
     height: 450px;
 }
+.Historia{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-around;
+    width: 100%;
+    height: 230px;
+}
+.parrafoHistoria{
+    font-size: 16px;
+    font-weight: bold;
+    width: 50%;
+    height: 230px;
+}
 
+img.panoramicaSuper{
+    width: 600px;
+    height: 200px;
+}
 img{
     display: flex;
     align-items: center;
@@ -82,7 +99,7 @@ img{
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    height: 560px;
+    height: 580px;
 }
 .promos{ /*Classe especial para Index.HTML*/
     border: solid;
@@ -114,6 +131,7 @@ input{
 .lista {  
     flex-wrap:wrap;
     display: flex;
+    font-weight: bold;
     align-items:flex-end;
     text-align:unset;
     list-style-type: none; 
@@ -133,6 +151,7 @@ input{
 }
 /* FIN Elementos principales para HTML de Catalogo*/
 
+/* Comienza clases de html contactos*/
 .contactoCliente{
     display: flex;
     justify-content: space-around;
@@ -155,6 +174,13 @@ input{
     width: 100px;
     height: 40px;
 }
+#formaPago{
+    display: flex; 
+    font-size: 20px;
+    font-weight: bold;
+    width: 100px;
+    height: 40px;
+}
 
 /*-- Aqui commienza las clases para el pie de pagina--*/
 .piedepagina{
@@ -171,5 +197,7 @@ input{
 span{
     font-weight: bold;
 }
+
+
 
 
