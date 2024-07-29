@@ -20,30 +20,28 @@
     </div>
     
     <div>
-        <Div class="subEncabezado"><!--Sub Encabezado con Ofertas Bancarias -->
-            <Div class="miniBox">  Contado 20% Desc  </Div>
-            <Div class="miniBox">  Debito 15% Desc  </Div>
-            <Div class="miniBox">  Credito 1 pago S/Interes  </Div>
-            <Div class="miniBox">  Credito 12 ctas 30% recardo </Div>
-        </Div> 
-
         <h2 id="oferta"> Catalogo De compras </h2>
-        <Div class="cuerpo">     <!--Estructura principal,, lista de productos y boton de compra -->                            
+        <Div class="cuerpoCatalogo">     <!--Estructura principal,, lista de productos y boton de compra -->                            
             <ul  id="lista" class="lista" >
+            
             </ul>         
-              
-            <div>
-                <li>1---Efectivo------------20% Descuento</li>
-                <li>2---Debito--------------20% Descuento</li>
-                <li>3---Credito 1 Pago-----Sin Recargo  </li>
-                <li>4---Credito 12 Pagos---40% Recargo  </li>
-            </div>
             
-            <input type="number" id="formaPago" min="1" max="4" value="1"> 
+            <Div class="subEncabezado"><!--Sub Encabezado con Ofertas Bancarias -->
+                <Div class="miniBox">1---Efectivo--20% </Div>
+                <Div class="miniBox">2---Debito----10%  </Div>
+                <Div class="miniBox">3---Credito 1 pago S/Interes  </Div>
+                <Div class="miniBox">4---Credito 12 ctas 40% recardo </Div>
+            </Div>
+            <DIv class="cierreCompra">  
+                <h3>ENTRE LAS OPCIONES,, ELIJA MEDIO DE PAGO: </h3>
+                <input type="number" id="formaPago" min="1" max="4" value="1"> 
             
-            <div id="comprar" class="button">    
-            </div>
+                <div id="comprar" class="button"> </div>
+            </DIv>
+        
         </Div>  
+        
+    
     </Div>
     
     <div class="piedepagina"> <!--Pie de Pagina, con desvios y contacto en redes -->

@@ -2,33 +2,41 @@
 
 let lista=document.getElementById("lista");
 
-const productos= ["Pan","Facturas","Masitas","Leche","Huevo","Aceite","Harina","Carne","Pollo","Cerveza","Gaseosa","Jugo","Detergente","Cloro","Desodorante","jabonRopa","Shampoo","CremaEnjuague","Vaso","Cuchillo","Tenedor","ResmaHojas","Mayonesa","Sabora"];
+const dirImagenes= ["./Pan.jfif","./Facturas.jfif","./Masitas.jfif","./Leche.jpg","./Huevos.jfif","./Aceite.jfif","./Harina.jfif","./Carne.jfif","./Pollo.jfif","./Cerveza.jfif","./Gaseosas.jfif","./Jugo.jfif","./Detergente.jpg","./Cloro.jfif","./DesodoranteP.jpg","./Jabon.jfif",
+                "./Shampoo.jfif","./CremaEnjuague.jfif","./Vaso.jfif","./Cuchillo.jfif","./Tenedor.jfif","./Hojas.jpg","./Mayonesa.jfif","./Mostaza.jfif"];                                                                                                                      
+const productos= ["Pan","Facturas","Masitas","Leche","Huevo","Aceite","Harina","Carne","Pollo","Cerveza","Gaseosa","Jugo","Detergente","Cloro","Desodorante","jabon Ropa","Shampoo","Crema Enjuague","Vaso","Cuchillo","Tenedor","Resma Hojas","Mayonesa","Mostaza"];
 const precios=  [ 2000,    4600,       2500,   1500,   1500,    3000,    1000,   8000,  5000,      1500,     1500,  300 ,        3000,   1500,         1500,   3600,     3000,           3000,  1500,      500 ,     500 ,     8000,      1300,     800 ];
 const stock  =  [   10,      10,        10,       8,     5,        6,       5,     15,     5,       20 ,       15,   50 ,          10,      15,          5,       7,        5,              6,     12,       12,       12,      15,         8,        6];
 
-function crearLista (arrayProductos,arrayPrecios,arrayStock){
+function crearLista (dirimagenes,arrayProductos,arrayPrecios,arrayStock){
     for(let i=0;i<arrayProductos.length;i++){
         let li=document.createElement("li");
-        let text=document.createTextNode(`Nombre: ${arrayProductos[i]} - Precio: $${arrayPrecios[i]} - Stock: ${arrayStock[i]}`);
-        li.appendChild(text);
-        lista.appendChild(li);
-        crearInput(li,i,arrayStock[i]);// llama funcion crear input para cada lemeneto
+        let text=document.createTextNode(`${arrayProductos[i]}: $${arrayPrecios[i]}`);
+        const img= document.createElement("img");
+        img.src=dirimagenes[i];
+        img.width=170;
+        img.height=170;
+        
+        li.appendChild(img);//asigno la imagen dentro de la lista.
+        li.appendChild(text);//asigno el texto(producto:$Precio) a la lista
+        lista.appendChild(li);//Creolista con imagen, texto e input por cada producto.
+        crearInput(li,i,arrayStock[i]);// llama funcion crear input para cada lemeneto. dentro de la lista
     }
 }
-
 
 
 function crearInput (li,i,arrayStock){     
     const input = document.createElement("input");
     input.setAttribute("type","number");
     input.setAttribute("id","input"+i); 
-    input.setAttribute("min","0");
+    input.setAttribute("min","0");//para no balidar stock negativo, directamente lo pongo como minimo.
     input.setAttribute("max",(arrayStock+1));//uso un elemento mas, colo para validar segun consigna.
     input.setAttribute("value","0");
     input.setAttribute("input","myinput"+i);
     li.appendChild(input);
 }
-crearLista(productos,precios,stock);
+
+crearLista(dirImagenes,productos,precios,stock);
 
 //Genero un boton para la compra
 let comprar=document.getElementById("comprar");
@@ -50,7 +58,7 @@ function validacionStock(){
 
 function descuento30 (i){ //Promo descuento 30% en productos Seleccionados del Index.html//
     let precioDescuento=precios[i];
-    if(productos[i]=="Leche" || productos[i]=="Desodorante" || productos[i]=="Detergente" || productos[i]=="ResmaHojas" || productos[i]=="jabonRopa"){
+    if(productos[i]=="Leche" || productos[i]=="Desodorante" || productos[i]=="Detergente" || productos[i]=="ResmaHojas"){
         precioDescuento=precios[i]-(precios[i]*0.3);
         console.log("descuento en "+ productos[i]+" 30% ");
     }
@@ -73,16 +81,18 @@ function formaDePago(totalCompra){ //Se hace Descuento o recargo segun correspon
     let formaPago=document.getElementById("formaPago").value;
     let precioFinal
     if (formaPago==1){
-        precioFinal=totalCompra-(totalCompra*0.2);
-        alert ("El total de la compra es: " + precioFinal +" $ Con un 20% de Descuento por pago Contado" );
+        precioFinal=totalCompra-(totalCompra*0.20);
+        alert ("El total de la compra es: $" + precioFinal +"  Con un 20% de Descuento por pago Contado" );
     }else if(formaPago==2){
-        precioFinal=totalCompra-(totalCompra*0.15);
-        alert ("El total de la compra es: " + precioFinal +" $ Con un 15% de Descuento por pago con Debito" );
+        precioFinal=totalCompra-(totalCompra*0.10);
+        alert ("El total de la compra es: $" + precioFinal +"  Con un 10% de Descuento por pago con Debito" );
     }else if(formaPago==3){
         precioFinal=totalCompra;
-        alert ("El total de la compra es: " + precioFinal +" $ sin recargo en un pago con tarjeta de Credito" );
+        alert ("El total de la compra es: $" + precioFinal +"  sin recargo en un pago con tarjeta de Credito" );
     }else{
-        precioFinal=(totalCompra*1.4);
-        alert ("El total de la compra es: " + precioFinal +" $ Con un 40% de Recargo en 12 Pagos Con Credito" );
+        precioFinal=Math.trunc(totalCompra*1.4);//Le saco los decimales para mejor entendimiento.
+        let cuota=Math.trunc(precioFinal/12);
+        alert ("El total de la compra es: $" + precioFinal +"  Con un 40% de Recargo en 12 Pagos Con Credito, y las cuotas seran de: $"+cuota );
+    
     }    
-}z
+}

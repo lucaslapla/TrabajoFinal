@@ -1,6 +1,6 @@
 
 body{
-    background-color: rgb(172, 108, 231);
+    background-color: rgb(193, 156, 228);
 }
 /*-- Se le da color de fondo a las paginas--*/
 
@@ -28,12 +28,21 @@ body{
     text-justify:distribute;
     width: 400px;
     height: 40px;
+    padding: 10px;
 }
+
 a.desvios{
+    font-size: 20px;
+    font-weight: bold;
     width: 100px;
     height: 30px;
     text-align: center;
     color: rgb(136, 225, 236);
+    padding: 15px;
+}
+a.desvios:hover{
+    color:  rgb(199, 237, 241);
+    font-size: 25px;
 }
 
 /*-- Hasta aca se utilizan clases para el Encabeado de la Pagina--*/
@@ -45,14 +54,16 @@ a.desvios{
     align-items: center;
     font-weight: bold;
     width: 100%;
-    height: 50px;
+    height: 60px;
+    padding: 5px;
 }
 .miniBox{
     border: solid;
     text-align: center;
     border-color: rgb(127, 64, 185);
-    width: 300px;
+    width: 230px;
     height: 30px;
+    padding: 5px;
 }
 
 /*-- hasta aqui Sub enbezado, utilizando clases para promos bancarias--*/
@@ -70,6 +81,7 @@ img.imgPlano{ /*-- utilizo un tamano espesifico para el plano--*/
 .Historia{
     display: flex;
     flex-direction:row;
+    text-align: justify;
     justify-content: space-around;
     width: 100%;
     height: 230px;
@@ -79,13 +91,14 @@ img.imgPlano{ /*-- utilizo un tamano espesifico para el plano--*/
     font-weight: bold;
     width: 50%;
     height: 230px;
+    margin: 60px;
 }
 
 img.panoramicaSuper{
     width: 600px;
     height: 200px;
 }
-img{
+img.promos{
     display: flex;
     align-items: center;
     width: 250px;
@@ -99,7 +112,7 @@ img{
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    height: 580px;
+    height: 560px;
 }
 .promos{ /*Classe especial para Index.HTML*/
     border: solid;
@@ -109,6 +122,15 @@ img{
 }
 
 /* Elementos principales para HTML de Catalogo*/
+.cuerpoCatalogo{   /* es el div contenedor Principal para todas las HTML*/
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 2000px;
+}
 button{
     font-size: 20px;
     font-weight: bold;
@@ -124,30 +146,43 @@ button{
 }
 
 input{
-    width: 30px;
-    height: 15px;
+    background-color: rgb(174, 174, 223);
+    font-size: 16px;
+    width: 45px;
+    height: 25px;
 }
 
 .lista {  
-    flex-wrap:wrap;
     display: flex;
+    flex-wrap:wrap;
     font-weight: bold;
-    align-items:flex-end;
-    text-align:unset;
-    list-style-type: none; 
+    text-align:center;
+    list-style-type: none;
+    
 }
 
-.lista li {
+.lista li { 
     display: flex;
     flex-direction: column;
     align-items:flex-start;
     justify-content: space-around;
-    text-align:justify;
     border: solid;
     border-color: rgb(127, 64, 185);
-    width: 180px;
-    height: 100px;
-    margin: 5px;
+    width: 170px;
+    height: 260px;
+    padding: 20px;  /* espacie los productos para mejor visual*/
+    margin: 20px;
+}
+.cierreCompra{
+    display: flex;
+    flex-direction:row;
+    align-items:flex-start;
+    justify-content: space-between;
+    border: solid;
+    width: 60%;
+    height: 60px;
+    padding: 20px;
+    margin: 20px;
 }
 /* FIN Elementos principales para HTML de Catalogo*/
 
@@ -156,7 +191,7 @@ input{
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-    align-items: center;
+    align-items:flex-start;
     width: 100%;
     height: 560px;
 }
@@ -165,6 +200,7 @@ input{
     height: 20px;
 }
 .datosComentario{
+    background-color: rgb(174, 174, 223);
     width: 500px;
     height: 100px;
 }
@@ -188,14 +224,19 @@ input{
     align-items: baseline;
     justify-content:space-around;
     background-color: rgb(74, 22, 122);
+    color: rgb(108, 200, 212);
     width: 100%;
     height: 50px;
 }
 .comerciles{
     display: flex;
+    color: rgb(136, 225, 236);
+    font-size: 10px;
+
 }
 span{
     font-weight: bold;
+    color: rgb(136, 225, 236);
 }
 
 
