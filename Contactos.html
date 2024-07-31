@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Style.css" >
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Contactos</title>
 </head>
 <body>
@@ -27,16 +28,24 @@
             <Div class="miniBox"> Instagram:@MiniSuperBorealis </Div>
             <Div class="miniBox"> MiniSuperBorealis@gmail.com </Div>
         </Div> 
-        <h2> Por favor complete los siguientes datos</h2>
+        <h3> Por favor complete los siguientes datos</h3>
         <form class="contactoCliente">          
-            <label for="nombre">Nombre: </label>
-            <input type="text" class="datos" id="nombre" placeholder="Nombres"> 
-            <label for="apellido"> Apellido: </label>
-            <input type="text" class="datos" id="apellido" placeholder="Apellido">
-            <label for="celular"> Celular </label>
-            <input type="text" class="datos" id="celular" placeholder="Celular">
-            <label for="correo">Correo Electronico</label>
-            <input type="text" class="datos" id="correo" placeholder="Correo">
+           <div>
+                <label for="nombre">   Nombre......</label>
+                <input type="text" class="datos" id="nombre" placeholder="ejem lucas"> 
+           </div>
+           <div>
+                <label for="apellido"> Apellido....</label>
+                <input type="text" class="datos" id="apellido" placeholder="ejem laplace">
+           </div>
+           <div>            
+                <label for="celular">  Celular......</label>
+                <input type="text" class="datos" id="celular" placeholder="ejem 2284 534449">
+           </div>
+           <div>
+               <label for="correo"> Correo Electronico:</label>
+                <input type="text" class="datos" id="correo" placeholder="lucaslapla@miniBorialis.com">
+           </div>
             <label for="comentario"> Ingrese un comentario si lo Desea </label>
             <textarea type="text" class="datosComentario" id="comentario" placeholder="Deje un comentario"> </textarea>
         

@@ -47,13 +47,20 @@ comprar.appendChild(button);
 comprar.addEventListener('click', validacionStock); //primero validamos, luego llamos funcion de compra;
 
 function validacionStock(){
+    let contadorFueraStock=0;
     for(let i=0; i<productos.length;i++){
         if((document.getElementById("input"+i).value)>stock[i]){
-            alert("lo sentimos mucho no has Stock Suficiente, se descontara un elemnto a : "+ productos[i]);
-            (document.getElementById("input"+i).value)=(document.getElementById("input"+i).value)-1;
+            alert("Lo sentimos mucho no has Stock Suficiente, se descontara un elemnto a : "+ productos[i]);
+            document.getElementById("input"+i).value=((document.getElementById("input"+i).value)-1);
+            contadorFueraStock++
         }
     }
-    comprarProductos();
+    if (contadorFueraStock==0){
+        comprarProductos(); //luego de validar llamamos a la funcion de comprarProducto
+    }else{
+        alert("Por falta de Stock se limitaron cantidades, ejecute nuevamente la compra si esta de acuerdo, Muchas Gracias");
+    }
+    
 }
 
 function descuento30 (i){ //Promo descuento 30% en productos Seleccionados del Index.html//
@@ -82,17 +89,37 @@ function formaDePago(totalCompra){ //Se hace Descuento o recargo segun correspon
     let precioFinal
     if (formaPago==1){
         precioFinal=totalCompra-(totalCompra*0.20);
-        alert ("El total de la compra es: $" + precioFinal +"  Con un 20% de Descuento por pago Contado" );
+            Swal.fire({
+                title: "Resultado de la Compra",
+                text:"El total de la compra es: $" + precioFinal +"  Con un 20% de Descuento por pago Contado",
+                icon:"susses",
+                confirmButtonText: 'Aceptar'
+             });
     }else if(formaPago==2){
         precioFinal=totalCompra-(totalCompra*0.10);
-        alert ("El total de la compra es: $" + precioFinal +"  Con un 10% de Descuento por pago con Debito" );
+        Swal.fire({
+            title: "Resultado de la Compra",
+            text:"El total de la compra es: $" + precioFinal +"  Con un 10% de Descuento por pago con Debito",
+            icon:"susses",
+            confirmButtonText: 'Aceptar'
+         });
     }else if(formaPago==3){
         precioFinal=totalCompra;
-        alert ("El total de la compra es: $" + precioFinal +"  sin recargo en un pago con tarjeta de Credito" );
+        Swal.fire({
+            title: "Resultado de la Compra",
+            text:"El total de la compra es: $" + precioFinal +"  sin recargo en un pago con tarjeta de Credito",
+            icon:"susses",
+            confirmButtonText: 'Aceptar'
+         });
     }else{
         precioFinal=Math.trunc(totalCompra*1.4);//Le saco los decimales para mejor entendimiento.
         let cuota=Math.trunc(precioFinal/12);
-        alert ("El total de la compra es: $" + precioFinal +"  Con un 40% de Recargo en 12 Pagos Con Credito, y las cuotas seran de: $"+cuota );
+        Swal.fire({
+            title: "Resultado de la Compra",
+            text:"El total de la compra es: $" + precioFinal +"  Con un 40% de Recargo en 12 Pagos Con Credito, y las cuotas seran de: $"+cuota,
+            icon:"susses",
+            confirmButtonText: 'Aceptar'
+         });
     
     }    
 }
